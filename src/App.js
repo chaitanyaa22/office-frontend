@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { BrowserRouter, Link, Route, Redirect, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './Components/Login'
 import Signup from './Components/Signup'
 import Userpage from './Components/Userpage'
-import socketIO from 'socket.io-client'
-
 
 export class App extends Component {
   componentDidMount(){
