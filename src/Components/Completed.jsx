@@ -26,9 +26,8 @@ export class Completed extends Component {
                     }
                     <div className="col-lg-5 col-xs-12 mt-3">
                         {this.props.forms.reverse().map((e, i) => {
-                            let a
                             if (e.createdTo === this.props.user.email && e.isActedOn === true) {
-                                a = <div className="card my-2" key={i}>
+                                return <div className="card my-2" key={i}>
                                     <div className="card-body">
                                         <h5 className="card-title">{e.createdByDepartment}</h5>
                                         <span className={`float-right px-1 rounded text-light ${e.isApproved ? "bg-success" : "bg-danger"}`}>
@@ -42,7 +41,6 @@ export class Completed extends Component {
                                     </div>
                                 </div>
                             }
-                            return a
                         })}
                     </div>
                 </div>
