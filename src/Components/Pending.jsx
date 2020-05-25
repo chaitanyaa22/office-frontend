@@ -44,8 +44,9 @@ export class Pending extends Component {
                 }
                 <div className="col-lg-5 col-xs-12 mt-3">
                     {this.props.forms.map((e, i) => {
+                        let a
                         if (e.createdTo === this.props.user.email && e.isActedOn === false) {
-                            return <div className="card my-2" key={i}>
+                            a = <div className="card my-2" key={i}>
                                 <div className="card-body">
                                     <h5 className="card-title">{e.createdByDepartment}</h5>
                                     <h6 className="text-muted">From: {e.createdByName}</h6>
@@ -60,10 +61,12 @@ export class Pending extends Component {
                                 </div>
                             </div>
                         }
+                        return a
                     })}
                     {this.props.forms.reverse().map((e, i) => {
+                        let a
                         if (e.createdTo !== this.props.user.email && e.isActedOn === false) {
-                            return <div className="card my-2" key={i}>
+                            a = <div className="card my-2" key={i}>
                                 <div className="card-body">
                                     <h5 className="card-title">{e.createdByDepartment}</h5>
                                     <h6 className="text-muted">From: {e.createdByName}</h6>
@@ -75,9 +78,8 @@ export class Pending extends Component {
                                 </div>
                             </div>
                         }
+                        return a
                     })}
-
-
                 </div>
             </div>
         )

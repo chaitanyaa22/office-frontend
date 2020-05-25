@@ -72,17 +72,21 @@ export class Form extends Component {
                     <select className="form-control mt-3" value={this.state.departmentNo} onChange={(e) => this.setState({ departmentNo: e.target.value })}>
                         <option value={0}>Select Department</option>
                         {this.state.departments.map((e, i) => {
+                            let a
                             if (e.departmentNo !== this.props.user.departmentNo) {
-                                return <option value={e.departmentNo} key={i}>{e.departmentName}</option>
+                                a = <option value={e.departmentNo} key={i}>{e.departmentName}</option>
                             }
+                            return a
                         })}
                     </select>
                     <select className="form-control mt-3" value={this.state.createdTo} onChange={(e) => this.setState({ createdTo: e.target.value })}>
                         <option value="">Select User</option>
                         {this.props.others.map((e, i) => {
-                            if (this.state.departmentNo == e.departmentNo && this.state.departmentNo !== 0) {
-                                return <option value={e.email} key={i}>{e.name}</option>
+                            let a
+                            if (this.state.departmentNo === e.departmentNo && this.state.departmentNo !== 0) {
+                                a = <option value={e.email} key={i}>{e.name}</option>
                             }
+                            return a
                         })}
                     </select>
                     <textarea className="form-control mt-3" rows="7" value={this.state.message} onChange={(e) => this.setState({ message: e.target.value })}></textarea>

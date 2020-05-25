@@ -17,7 +17,6 @@ export default function appReducer(state = initialState, action) {
             newState.others = others
             return newState
         case 'get_forms':
-            console.log(action.payload)
             newState.forms = action.payload
             return newState
         case 'done':
